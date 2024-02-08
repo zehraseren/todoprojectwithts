@@ -31,9 +31,10 @@ const App: FC = () => {
   };
 
   return (
-    <div>
-      <div className="App">
+    <div className="App">
+      <div className="mainCard">
         <input
+          className="mainCardInput"
           type="text"
           placeholder="Taskı giriniz."
           value={task}
@@ -42,15 +43,16 @@ const App: FC = () => {
         />
         {}
         <input
+          className="mainCardInput"
           type="number"
           placeholder="Kaç günde tamamlamalısınız?"
           value={workDay}
           onChange={handleChange}
           name="workDay"
         />
-        <button onClick={addNewTask}>Yeni Task Ekle</button>
+        <button className="mainCardButton" onClick={addNewTask}>Yeni Task Ekle</button>
       </div>
-      <div>
+      <div className="todoCard">
         {todoList.map((task: todoType, index: number) => {
           return <TodoItem key={index} task={task} deleteTask={deleteTask} />;
         })}
