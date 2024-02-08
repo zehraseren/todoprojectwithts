@@ -1,15 +1,27 @@
 import { ChangeEvent, FC, useState } from "react";
 import "./App.css";
+import { todoType } from "./apptypes";
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
   const [workDay, setWorkDay] = useState<number>(0);
+  const [todoList, setTodoList] = useState<todoType[]>([]);
+
+  console.log(todoList)
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.name === "task") {
       setTask(event.target.value);
     } else {
       setWorkDay(Number(event.target.value));
     }
+  };
+
+  const addNewTask = () => {
+    const newTask = { taskName: task, workDay: workDay };
+    setTodoList([...todoList, newTask]);
+    setTask("");
+    setWorkDay(0);
   };
 
   return (
@@ -28,7 +40,7 @@ const App: FC = () => {
         onChange={handleChange}
         name="workDay"
       />
-      <button>Yeni Task Ekle</button>
+      <button onClick={addNewTask}>Yeni Task Ekle</button>
     </div>
   );
 };
