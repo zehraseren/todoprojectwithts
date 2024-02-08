@@ -26,6 +26,14 @@
   align-items: center;
 }
 
+.cardButton {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: red;
+  color: white;
+}
+
 .card {
   width: 350px;
   border: 1px solid black;

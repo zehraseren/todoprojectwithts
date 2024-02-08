@@ -50,7 +50,9 @@ const App: FC = () => {
           onChange={handleChange}
           name="workDay"
         />
-        <button className="mainCardButton" onClick={addNewTask}>Yeni Task Ekle</button>
+        <button className="mainCardButton" onClick={addNewTask}>
+          Yeni Task Ekle
+        </button>
       </div>
       <div className="todoCard">
         {todoList.map((task: todoType, index: number) => {
